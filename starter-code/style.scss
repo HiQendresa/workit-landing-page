@@ -99,7 +99,8 @@ select {
 header {
     background-color: hsl( var(--clr-dark) );
     height: 472px;
-    border-radius: 0 0 100% 100%/0 0 15% 15%;
+    clip-path: polygon(50% 0%, 100% 0, 100% 95%, 50% 99%, 0 95%, 0 0);
+
 
     @media screen and (min-width: 720px){
       height: 564px;
@@ -174,30 +175,37 @@ header {
     }
 
 
-.header-description {
-    text-align: center;
+      .header-description {
+          text-align: center;
+      }
+  }
 }
-
 .image-container {
-  margin: 40px auto;
-  width: 250px;
-  height: 184px;
+  margin: -76px auto;
+  width: 183px;
+  height: 141px;
+  position: relative;
 
+  @media screen and (min-width: 300px) {
+    margin: -98px auto;
+    width: 250px;
+    height: 184px;
+  }
   @media screen and (min-width: 720px) {
+    margin: -160px auto;
     width: 465px;
-    height: 410px;
+    height: 280px;
 }
 
   @media screen and (min-width: 1200px) {
+    margin: -255px auto;
     width: 560px;
     height: 400px;}
 
   img {
       height: 100%;}
   }
-}
-}
-
+  
 // Service Section
 
 .service-section {
@@ -205,7 +213,8 @@ header {
   z-index: -1;
   position: relative;
   background-color: #FCF8FF;
-  border-radius: 0 0 100% 100%/0 0 9% 9%;
+  clip-path: polygon(50% 0%, 100% 0, 100% 95%, 50% 99%, 0 95%, 0 0);
+  
 
   display: flex;
   flex-direction: column;
@@ -224,11 +233,11 @@ header {
   }
 
   .service-container:first-child {
-    margin-top: 150px;
+    margin-top: 100px;
     @media screen and (min-width: 720px) {
-    margin-top: 300px;}
-    @media screen and (min-width: 1200px) {
-    margin-top: 156px;}
+    margin-top: 100px;}
+    // @media screen and (min-width: 1200px) {
+    // margin-top: 156px;}
   }
   .service-container {
     display: flex;
@@ -282,7 +291,8 @@ header {
 
 // Founder Section
 .founder-section {
-  padding: 150px 20px;
+  position: relative;
+  padding: 90px 20px 0px;
   margin: 0 auto;
 
   @media screen and (min-width: 720px) {
@@ -297,12 +307,12 @@ header {
     
     @media screen and (min-width: 720px) {
       flex-direction: row;
-      padding-bottom: 130px;
+      padding-bottom: 20px;
   }
 
     @media screen and (min-width: 900px) {
       flex-direction: row;
-      padding: 150px 0px;}
+      padding-top: 0px;}
     }
     
     .image_container{
@@ -359,6 +369,30 @@ header {
         margin: 20px 0;
       }
     }
+
+    .founder-svg {
+      width: 177px;
+      height: 287px;
+      display: none; 
+
+      @media screen  and (min-width: 720px){
+        position: absolute;
+        display: block;
+        top: 80%;
+        right: 5%;
+      }
+
+      @media screen  and (min-width: 1020px){
+        right: 10%;
+      }
+
+      @media screen  and (min-width: 1200px){
+        top: 73%;
+        right: 22%;
+      }
+    
+    }
+
 }
 
 // Footer
@@ -368,7 +402,8 @@ footer{
   justify-content: center;
   align-items: center;
   gap: 40px;
-  padding-top: 40px;
+  padding: 40px 0;
+  padding-bottom: 60px;
 
   .social_media {
     display: flex;
